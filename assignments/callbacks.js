@@ -41,24 +41,55 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+const itemLength = getLength(items, length => `This array has a length of ${length}!`);
+console.log(itemLength);
+
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  let i = arr.length - 1;
+  return cb(arr[i]);
 }
+
+const lastItem = last(items, item => `The last item in this array is ${item}!`);
+console.log(lastItem);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+
+const added = sumNums(40, 50, sum => `These two numbers together equal ${sum}!`);
+console.log(added);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x*y);
 }
+
+const multiplied = multiplyNums(30,30, sum => `These two numbers multipled together equal ${sum}`);
+console.log(multiplied);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      return cb(true);
+    }
+  }
+  return cb(false);
+ }
+
+
+const included = contains('Goose', items, yada => ` Included in array? : ${yada}`);
+const included2 = contains('Pencil', items, yada => ` Included in array? : ${yada}`);
+console.log(included);
+console.log(included2);
 
 /* STRETCH PROBLEM */
 

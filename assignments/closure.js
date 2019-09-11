@@ -4,6 +4,14 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+let outervariable = "This is outside of the function!";
+
+function randomtest(){
+  let innervariable = "This is inside the function!";
+  console.log(innervariable, outervariable);
+}
+
+randomtest();
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
